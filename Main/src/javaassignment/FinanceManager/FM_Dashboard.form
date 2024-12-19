@@ -196,12 +196,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="MainTAB" alignment="1" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="235" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="647" max="32767" attributes="0"/>
           </Group>
+          <Component id="MainTAB" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -211,6 +211,7 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="MainTAB" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -257,7 +258,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="supplierInputPanel" max="32767" attributes="0"/>
                               </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="lblSupplierTb" min="-2" pref="115" max="-2" attributes="0"/>
@@ -265,13 +266,13 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblItemTb" min="-2" pref="114" max="-2" attributes="0"/>
-                                          <Component id="itemInputPanel" min="-2" pref="718" max="-2" attributes="0"/>
+                                          <Component id="lblItemTb" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                                          <Component id="itemInputPanel" alignment="0" min="-2" pref="718" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="23" max="32767" attributes="0"/>
+                          <EmptySpace pref="405" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -343,10 +344,10 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="purchaseOrderTablePanel1" pref="735" max="32767" attributes="0"/>
+                                  <Component id="purchaseOrderTablePanel1" pref="1117" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="45" pref="416" max="32767" attributes="0"/>
+                                  <EmptySpace min="45" pref="798" max="32767" attributes="0"/>
                                   <Component id="Refresh" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Component id="Reject" min="-2" max="-2" attributes="0"/>
@@ -441,10 +442,10 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="purchaseOrderTablePanel2" pref="735" max="32767" attributes="0"/>
+                                  <Component id="purchaseOrderTablePanel2" pref="1117" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="45" pref="669" max="32767" attributes="0"/>
+                                  <EmptySpace min="45" pref="1051" max="32767" attributes="0"/>
                                   <Component id="paid" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>

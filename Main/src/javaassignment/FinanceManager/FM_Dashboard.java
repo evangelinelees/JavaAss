@@ -247,7 +247,7 @@ public class FM_Dashboard extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblItemTb, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(itemInputPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 718, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(405, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,9 +299,9 @@ public class FM_Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(purchaseOrderTablePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE))
+                        .addComponent(purchaseOrderTablePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1117, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(45, 416, Short.MAX_VALUE)
+                        .addGap(45, 798, Short.MAX_VALUE)
                         .addComponent(Refresh)
                         .addGap(26, 26, 26)
                         .addComponent(Reject)
@@ -342,9 +342,9 @@ public class FM_Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(purchaseOrderTablePanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 735, Short.MAX_VALUE))
+                        .addComponent(purchaseOrderTablePanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1117, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(45, 669, Short.MAX_VALUE)
+                        .addGap(45, 1051, Short.MAX_VALUE)
                         .addComponent(paid)))
                 .addGap(14, 14, 14))
         );
@@ -378,11 +378,11 @@ public class FM_Dashboard extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(MainTAB, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(235, 235, 235)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(647, Short.MAX_VALUE))
+            .addComponent(MainTAB, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -390,7 +390,8 @@ public class FM_Dashboard extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MainTAB))
+                .addComponent(MainTAB)
+                .addGap(47, 47, 47))
         );
 
         pack();
@@ -400,6 +401,20 @@ public class FM_Dashboard extends javax.swing.JFrame {
         approvePurchaseOrder();
         loadPO();
     }//GEN-LAST:event_ApproveActionPerformed
+
+    private void RejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RejectActionPerformed
+        rejectPurchaseOrder();
+        loadPO();
+    }//GEN-LAST:event_RejectActionPerformed
+
+    private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
+        loadPO();
+    }//GEN-LAST:event_RefreshActionPerformed
+
+    private void paidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paidActionPerformed
+        payPurchaseOrder();
+        loadApprovedPO();
+    }//GEN-LAST:event_paidActionPerformed
      
     private void approvePurchaseOrder() {
         int selectedRow = purchaseOrderTablePanel1.getTable().getSelectedRow();
@@ -417,11 +432,6 @@ public class FM_Dashboard extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please select a Purchase Order to approve.");
         }
     }
-    private void RejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RejectActionPerformed
-        rejectPurchaseOrder();
-        loadPO();
-    }//GEN-LAST:event_RejectActionPerformed
-
     private void rejectPurchaseOrder() {
         int selectedRow = purchaseOrderTablePanel1.getTable().getSelectedRow();
         if (selectedRow >= 0) {
@@ -441,17 +451,8 @@ public class FM_Dashboard extends javax.swing.JFrame {
     
     
     
-    private void RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RefreshActionPerformed
-        loadPO();
-    }//GEN-LAST:event_RefreshActionPerformed
-
     
-    
-    private void paidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paidActionPerformed
-        payPurchaseOrder();
-        loadApprovedPO();
-    }//GEN-LAST:event_paidActionPerformed
-    
+        
     private void payPurchaseOrder() {
         int selectedRow = purchaseOrderTablePanel2.getTable().getSelectedRow();
 
