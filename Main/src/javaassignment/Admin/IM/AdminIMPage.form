@@ -24,12 +24,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <Component id="menu1" min="-2" pref="206" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="body" pref="1044" max="32767" attributes="0"/>
+              <Component id="body" max="32767" attributes="0"/>
           </Group>
-          <Component id="header1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="header1" min="-2" pref="1168" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -37,8 +40,8 @@
           <Group type="102" alignment="1" attributes="0">
               <Component id="header1" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="body" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
+                  <Component id="body" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="menu1" min="-2" pref="707" max="-2" attributes="0"/>
                   </Group>
@@ -51,8 +54,6 @@
   <SubComponents>
     <Component class="javaassignment.Admin.IM.IM_MainMenu" name="menu1">
     </Component>
-    <Component class="javaassignment.InventoryManager.Components.Header" name="header1">
-    </Component>
     <Container class="javax.swing.JPanel" name="body">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -62,5 +63,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
     </Container>
+    <Component class="javaassignment.InventoryManager.Components.Header" name="header1">
+    </Component>
   </SubComponents>
 </Form>
