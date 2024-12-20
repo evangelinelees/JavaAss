@@ -5,7 +5,7 @@ PM2283|angie|060808105162|test@gmail.com|0132435678|asdfghj|Purchase Manager
 SM2663|evangeline|09876543212|test@gmail.com|0111148376|12345|Sales Manager
 SM5624|kyt|09876541324|test@gmail.com|0123457615|1234|Sales Manager
 SM6286|angie|761007105890|angie@gmail.com|0126307971|1234567|Sales Manager
-SM5336|zoey|098987651325|z@gmail.com|0987665413|asd|Sales Manager
-IM1234|Jasper jasper|041105120625|jasperchin@gmail.com|0128250398|123|Inventory Manager
-SM4638|jennifer chok|13472987234|a@gmail.com|12332445243|asd|Sales Manager
+FM5336|zoey|098987651325|z@gmail.com|0987665413|asd|Sales Manager
+PM7330|Jasper jasper|041105120625|jasperchin@gmail.com|0128250398|123|Sales Manager
+IM4638|jennifer chok|13472987234|a@gmail.com|12332445243|asd|Sales Manager
 SM4778|Alvin khoo|040109100811|a@mail.com|0126057282|123|Sales Manager

@@ -1,15 +1,3 @@
-S0001|TechWorld Supplies|123 Tech Street|0123456789|techworld@gmail.com
-S0002|Mobile Hub|45 Mobile Avenue|0987654321|mobilehub@gmail.com
-S0003|CoolTech Appliances|78 Cool Lane|0112233445|cooltech@gmail.com
-S0004|FrostKing Supplies|89 Frost Road|0223344556|frostking@gmail.com
-S0005|GameTech Solutions|56 Gamer's Way|0334455667|gametech@gmail.com
-S0006|OfficeTech|90 Office Boulevard|0445566778|officetech@gmail.com
-S0007|AudioMax|34 Music Avenue|0556677889|audiomax@gmail.com
-S0008|BrightWorks|12 Lamp Street|0667788990|brightworks@gmail.com
-S0009|MiniChill Co.|77 Mini Lane|0778899001|minichill@gmail.com
-S0010|FlexTech|22 Convertible Road|0889900112|flextech@gmail.com
-S0011|VisionTech|31 Projector Drive|0990011223|visiontech@gmail.com
-S0012|FutureCool|44 Future Street|0101122334|futurecool@gmail.com
-S0013|ValueMobiles|67 Budget Boulevard|0112233445|valuemobiles@gmail.com
-S0014|SlimTech|89 Slim Road|0123344556|slimtech@gmail.com
-S0015|SmartBuy|99 Smart Lane|0134455667|smartbuy@gmail.com
+S0004|Fast|Soap Road|0128250398|as@gmail.com
+S0005|Fast anf furious|Soap Road|as@gmail.com|0128250398
+S0007|LG|Soap Road|as@gmail.com|0128250398

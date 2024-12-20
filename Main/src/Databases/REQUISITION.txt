@@ -2,4 +2,7 @@ I0021|Chinese|5|23|admin
 I0022|Chinese|5|12|SM2665
 I0022|Chinese|5|34|SM2665
 I0017|Chinese|5|12|SM4638
-I0015|Refrigerator|2|10|SM2663
+I0013|Chinese|5|12|SM4638
+I0015|Chinese|5|12|SM2663
+I0009|Refrigerator|3|12|SM2663
+I0006|Refrigerator|10|12|SM2663
