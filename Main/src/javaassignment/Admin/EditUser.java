@@ -9,14 +9,15 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
-
+// this edit user class encapsulates tghe fields , and methods in save button action performed to control the logic of updating user details
+//this class focuses on only presenting and collecting the user's information for editing without needing to know how the data is stored or manage
 
 public class EditUser extends javax.swing.JFrame {
-   private String loggedInUser;
+   public String loggedInUser;
    private User user;
 
     /** Creates new form UpdateUser */
-    public EditUser(User user) {
+    public EditUser(User user, String loggedInUser) {
         initComponents();
         this.user = user;
         this.loggedInUser = loggedInUser;
@@ -28,7 +29,12 @@ public class EditUser extends javax.swing.JFrame {
         email_TF.setText(user.getEmail());
         PN_TF.setText(user.getPhNumber());
     }
+    
 
+     public EditUser() {
+         
+    }
+     
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -262,9 +268,9 @@ public class EditUser extends javax.swing.JFrame {
     user.setEmail(updatedEmail);
     user.setPhNumber(updatedPhoneNumber);
 
-    // Call the update method from the AdminDAOImpl to save the updated details
-    AdminDAOImpl adminDAO = new AdminDAOImpl();  // Assuming you have access to AdminDAOImpl
-    boolean isUpdated = adminDAO.updateUser(user);
+    
+    AdminDAOImpl adminDAO = new AdminDAOImpl();  
+    boolean isUpdated = adminDAO.updateUser(user, loggedInUser); // the specific details of file manipulation are abstracted away and exposed as method in this line 
 
     if (isUpdated) {
         // Optionally, show a message confirming the update
@@ -279,6 +285,8 @@ public class EditUser extends javax.swing.JFrame {
         UsersList UL = new UsersList(loggedInUser);
         UL.setVisible(true);
         this.dispose();
+        
+        
     }//GEN-LAST:event_Back_BTNActionPerformed
 
     private void ICNum_TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ICNum_TFActionPerformed
@@ -321,8 +329,7 @@ public class EditUser extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-            User user = new User(); // Initialize appropriately
-            new EditUser(user).setVisible(true);
+            new EditUser().setVisible(true);
             }
         });
     }

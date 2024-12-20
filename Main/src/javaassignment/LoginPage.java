@@ -6,7 +6,15 @@ import javaassignment.Admin.AdminMainPage;
 import javaassignment.Admin.Admin;
 import javaassignment.Admin.AdminDAO;
 import javaassignment.Admin.AdminDAOImpl;
+import javaassignment.Admin.FM.AdminFMPage;
+import javaassignment.Admin.PM.AdminPMPage;
+import javaassignment.InventoryManager.Components.ItemInputPanel;
+import javaassignment.InventoryManager.Components.SupplierInputPanel;
+import javaassignment.InventoryManager.Controller.InventoryController;
+import javaassignment.InventoryManager.Controller.SupplierController;
 import javaassignment.InventoryManager.Main;
+import javaassignment.PurchaseManager.PurchaseOrderDao;
+import javaassignment.PurchaseManager.PurchaseOrderDaoImpl;
 import javaassignment.PurchaseManager.RequisitionDAO;
 import javaassignment.PurchaseManager.RequisitionDAOImpl;
 
@@ -25,6 +33,13 @@ public class LoginPage extends javax.swing.JFrame {
     }
 
     
+    InventoryController inventoryController = new  InventoryController();
+    ItemInputPanel itemInputPanel = new ItemInputPanel();
+    SupplierInputPanel supplierInputPanel = new SupplierInputPanel();
+    SupplierController supplierController = new SupplierController();
+    RequisitionDAO requisitionDAO = new RequisitionDAOImpl();
+    PurchaseOrderDao purchaseOrderDao = new PurchaseOrderDaoImpl();
+    
 
     //fag code
     @SuppressWarnings("unchecked")
@@ -36,8 +51,8 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         ID_TF = new javax.swing.JTextField();
-        Pass_TF = new javax.swing.JTextField();
         Login_Button = new javax.swing.JButton();
+        Pass_TF = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,16 +88,21 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
+        Pass_TF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Pass_TFActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 256, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(239, 239, 239))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(270, 270, 270)
+                        .addComponent(Login_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(99, 99, 99)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,12 +110,13 @@ public class LoginPage extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ID_TF)
-                            .addComponent(Pass_TF, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(270, 270, 270)
-                        .addComponent(Login_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Pass_TF)
+                            .addComponent(ID_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(160, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(239, 239, 239))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,7 +131,7 @@ public class LoginPage extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(Pass_TF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
                 .addComponent(Login_Button, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45))
         );
@@ -158,6 +179,10 @@ public class LoginPage extends javax.swing.JFrame {
 
     }//GEN-LAST:event_Login_ButtonActionPerformed
 
+    private void Pass_TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pass_TFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Pass_TFActionPerformed
+
    
 
     
@@ -191,8 +216,9 @@ public class LoginPage extends javax.swing.JFrame {
                 break;
             case "Purchase Manager":
                 loggedInUser = ID;
-                //SalesManagerMainPage SMMP = new SalesManagerMainPage(loggedInUser);
-                //SMMP.setVisible(true);
+                AdminPMPage PMP = new AdminPMPage(loggedInUser, inventoryController,  itemInputPanel, supplierInputPanel, 
+                     supplierController,  requisitionDAO,  purchaseOrderDao); 
+                PMP.setVisible(true);
                 this.dispose();
                 JOptionPane.showMessageDialog(this, "Welcome "+ ID);
                 break;
@@ -204,10 +230,12 @@ public class LoginPage extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Welcome "+ ID);
                 break;
             case "Finance Manager":
-                loggedInUser = ID;
-                //SalesManagerMainPage SMMP = new SalesManagerMainPage(loggedInUser);
-                //SMMP.setVisible(true);
+                loggedInUser = ID;                
+                AdminFMPage FMP = new AdminFMPage(loggedInUser, inventoryController , itemInputPanel , supplierInputPanel , 
+                supplierController , requisitionDAO ,  purchaseOrderDao); 
+                FMP.setVisible(true);
                 this.dispose();
+                
                 JOptionPane.showMessageDialog(this, "Welcome "+ ID);
                 break;
             default:
@@ -259,7 +287,7 @@ public class LoginPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ID_TF;
     private javax.swing.JButton Login_Button;
-    private javax.swing.JTextField Pass_TF;
+    private javax.swing.JPasswordField Pass_TF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

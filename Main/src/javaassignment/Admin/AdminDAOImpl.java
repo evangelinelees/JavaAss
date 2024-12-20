@@ -63,7 +63,7 @@ public class AdminDAOImpl implements AdminDAO {
     }
 
     @Override
-    public boolean updateUser(User user) {
+    public boolean updateUser(User user, String loggedInUser) {
     
     List<User> users = getAllUsers();
     boolean updated = false;
@@ -92,7 +92,7 @@ public class AdminDAOImpl implements AdminDAO {
 }
 
     @Override
-    public boolean deleteUser(String id) {
+    public boolean deleteUser(String id) { //correct
         List<User> users = getAllUsers();
         boolean deleted = false;
 
@@ -260,8 +260,8 @@ public class AdminDAOImpl implements AdminDAO {
             }
         } catch (IOException e) {
             System.err.println("Error writing to log file: " + e.getMessage());
+        }
     }
- }
 }
     
 

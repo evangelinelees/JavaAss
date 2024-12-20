@@ -42,7 +42,6 @@ public class AdminMainPage extends javax.swing.JFrame {
     public AdminMainPage(String loggedInUser) {
         initComponents();
         this.loggedInUser = loggedInUser;
-        System.out.println(loggedInUser);
         
     }
     
@@ -266,7 +265,7 @@ public class AdminMainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_notificationTableMouseClicked
 
     private void SalesBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalesBTNActionPerformed
-       AdminSMPage ASMP = new AdminSMPage(loggedInUser);
+        AdminSMPage ASMP = new AdminSMPage(loggedInUser);
         ASMP.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_SalesBTNActionPerformed
@@ -302,7 +301,6 @@ public class AdminMainPage extends javax.swing.JFrame {
 
     private void RegisterBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterBTNActionPerformed
         AdminRegistrationPage RP = new AdminRegistrationPage(loggedInUser);
-
         RP.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_RegisterBTNActionPerformed
