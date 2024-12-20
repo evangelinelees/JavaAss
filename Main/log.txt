@@ -1,0 +1,4 @@
+1 | null | Deducted quantity for item ID: I0009 | SUCCESS
+2 | null | Item added | SUCCESS
+3 | null | Item deleted | SUCCESS
+4 | null | Deducted quantity for item ID: I0013 | SUCCESS

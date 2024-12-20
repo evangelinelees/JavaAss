@@ -2,3 +2,30 @@
 2 | admin | User updated | SUCCESS
 3 | admin | User updated | SUCCESS
 4 | admin | User deleted | SUCCESS
+5 | admin | Requisition created | SUCCESS
+6 | admin | Requisition created | SUCCESS
+7 | admin | Submitted daily report | SUCCESS
+8 | admin | PO generated | SUCCESS
+9 | admin | PO generated | SUCCESS
+10 | admin | PO generated | SUCCESS
+11 | admin | PO Rejected | SUCCESS
+12 | admin | PO Approved | SUCCESS
+13 | admin | PO Paid | SUCCESS
+14 | admin | PO Paid | SUCCESS
+15 | admin | PO Paid | SUCCESS
+16 | admin | PO Paid | SUCCESS
+17 | admin | PO Approved | SUCCESS
+18 | admin | PO Paid | SUCCESS
+19 | admin | New user created | SUCCESS
+20 | admin | User updated | SUCCESS
+21 | admin | User deleted | SUCCESS
+22 | admin | Item created | SUCCESS
+23 | admin | Item updated | SUCCESS
+24 | admin | Item deleted | SUCCESS
+25 | admin | New user created | SUCCESS
+26 | admin | User updated | SUCCESS
+27 | admin | User deleted | SUCCESS
+28 | SM2663 | Requisition created | SUCCESS
+29 | SM2663 | Sales entry deleted | SUCCESS
+30 | SM2663 | Submitted daily report | SUCCESS
+31 | admin | PO Paid | SUCCESS
