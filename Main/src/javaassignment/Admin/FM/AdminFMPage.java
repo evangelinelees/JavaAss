@@ -247,7 +247,7 @@ public class AdminFMPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setText("Purchase Manager Dashboard");
+        jLabel1.setText("Finance Manager Dashboard");
 
         lblItemTb.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblItemTb.setText("Item Table");

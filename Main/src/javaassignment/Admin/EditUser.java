@@ -287,6 +287,7 @@ public class EditUser extends javax.swing.JFrame {
         this.dispose();
         
         
+        
     }//GEN-LAST:event_Back_BTNActionPerformed
 
     private void ICNum_TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ICNum_TFActionPerformed

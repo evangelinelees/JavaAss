@@ -1,19 +1,15 @@
-I0005|Soup|am i trolling?|4833|30.00|Fast
-I0006|ass|am i trolling?|5000|30.00|Fast
-I0008|Chinese|hard working|5|888.00|Fast
-I0009|Chinese|yellow and hard working|5|888.00|Fast
-I0010|Chinese|yellow and hard working|3|888.00|Select a Supplier
-I0011|Chinese|yellow and hard working|5|888.00|Select a Supplier
-I0012|Chinese|yellow and hard working|2|888.00|Select a Supplier
-I0013|Chinese|yellow and hard working|5|888.00|Select a Supplier
-I0015|Chinese|yellow and hard working|5|888.00|Fast
-I0016|Chinese|yellow and hard working|5|888.00|Fast
-I0017|Chinese|yellow and hard working|5|888.00|Fast
-I0018|Chinese|yellow and hard working|5|888.00|Fast
-I0019|Chinese|yellow and hard working|5|888.00|Fast
-I0020|Chinese|yellow and hard working|5|888.00|Select a Supplier
-I0021|Chinese|yellow and hard working|5|888.00|Fast
-I0022|Chinese|yellow and hard working|5|888.00|Select a Supplier
-I0023|Chinese|yellow and hard working|5|888.00|Select a Supplier
-I0024|Chinese|yellow and hard working|5|888.00|Select a Supplier
-I0026|Chinese|yellow and hard working|5|888.00|Select a Supplier
+I0001|Laptop|High-performance laptop with 16GB RAM and 512GB SSD|10|1200.00|TechWorld Supplies
+I0002|Phone|Latest smartphone with 128GB storage and 5G connectivity|30|800.00|Mobile Hub
+I0003|Refrigerator|Double-door refrigerator with 300L capacity|5|600.00|CoolTech Appliances
+I0004|Laptop|Gaming laptop with RTX 3060 and 1TB SSD|8|1500.00|GameTech Solutions
+I0005|Phone|Mid-range smartphone with 64GB storage and dual cameras|20|400.00|PhoneZone
+I0006|Refrigerator|Energy-efficient single-door refrigerator with 200L capacity|10|500.00|FrostKing Supplies
+I0007|Laptop|Lightweight ultrabook with 8GB RAM and 256GB SSD|12|900.00|SlimTech
+I0008|Phone|Flagship smartphone with 256GB storage and triple cameras|15|1200.00|SmartBuy
+I0009|Refrigerator|French-door refrigerator with 400L capacity and ice maker|2|1000.00|ChillMaster
+I0010|Laptop|Business laptop with 32GB RAM and 1TB SSD|6|1800.00|OfficeTech
+I0011|Phone|Budget smartphone with 32GB storage and HD screen|25|200.00|ValueMobiles
+I0012|Refrigerator|Compact mini refrigerator with 100L capacity|20|300.00|MiniChill Co.
+I0013|Laptop|Convertible laptop with touchscreen and 360° hinge|9|1100.00|FlexTech
+I0014|Phone|Rugged smartphone with waterproof and shockproof design|10|600.00|ToughPhones
+I0015|Refrigerator|Smart refrigerator with Wi-Fi and touch display|2|2000.00|FutureCool

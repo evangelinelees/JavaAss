@@ -8,3 +8,4 @@
 8 | null | Supplier created | SUCCESS
 9 | null | Supplier updated | SUCCESS
 10 | null | Supplier deleted | SUCCESS
+
