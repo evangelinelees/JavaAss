@@ -227,7 +227,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Purchase Manager Dashboard"/>
+        <Property name="text" type="java.lang.String" value="Finance Manager Dashboard"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JTabbedPane" name="MainTAB">

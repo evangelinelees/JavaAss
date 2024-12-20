@@ -11,12 +11,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
 import java.net.URL;
+import javaassignment.LoginPage;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import net.miginfocom.swing.MigLayout;
 
 
@@ -112,8 +115,14 @@ public class MainMenu extends JComponent {
     private void performLogout() {
         // Implement your logout logic here
         System.out.println("Logging out..."); // Replace with actual logout logic
-        // Example logic: exit application
-         System.exit(0); // Uncomment if //you want to close the application
+        LoginPage loginPage = new LoginPage();
+        loginPage.setVisible(true);
+
+        // Get the parent frame and dispose of it
+        JFrame parentFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (parentFrame != null) {
+            parentFrame.dispose();
+        } // Uncomment if //you want to close the application
     }
     
     private Icon getIcon(int index) {
