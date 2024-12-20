@@ -72,6 +72,7 @@ public class DailyItemEntryPage_SM extends javax.swing.JFrame {
 
         // Add listeners to calculate grossProfit
         setupListeners();
+        setupTableSelectionListener();
 
         // Load items into the table
         loadItems();       
@@ -89,7 +90,33 @@ public class DailyItemEntryPage_SM extends javax.swing.JFrame {
         dateField.setText(today.format(formatter));
         dateField.setEnabled(false);
 
-        // Set fields to be non-editable by default
+        // Set fields to be non-editable by default  log in 
+        itemName.setEnabled(false);
+        itemCode.setEnabled(false);
+        initialQuantity.setEnabled(false);
+        grossProfit.setEnabled(false);
+        price.setEnabled(false);
+
+        // Add listeners to calculate grossProfit
+        setupListeners();
+
+        // Load items into the table
+        loadItems();       
+        
+    }
+    
+     public DailyItemEntryPage_SM(){
+       initComponents();
+       
+        
+
+        // Set the current date in the dateField
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        dateField.setText(today.format(formatter));
+        dateField.setEnabled(false);
+
+        // Set fields to be non-editable by default  log in 
         itemName.setEnabled(false);
         itemCode.setEnabled(false);
         initialQuantity.setEnabled(false);
@@ -130,7 +157,7 @@ public class DailyItemEntryPage_SM extends javax.swing.JFrame {
         });
     }
 
-    // Attach listeners to the relevant fields
+    // Attach listeners to the relevant fields                       wdym its working show me where the problem
     private void setupListeners() {
         addListenerToField(initialQuantity);
         addListenerToField(lossesField);
@@ -780,8 +807,8 @@ public class DailyItemEntryPage_SM extends javax.swing.JFrame {
                 InventoryController inventoryController = new InventoryController();
                 DailyItemEntryPage_SM frame = new DailyItemEntryPage_SM(inventoryController);
                 frame.setVisible(true);
-                frame.setupTableSelectionListener();
-                frame.setupListeners();
+                frame.setupTableSelectionListener();//<-------------LOLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL
+                frame.setupListeners();//IT WORKS BORMALLY CAUSE I CALLED HERE I JUST REMB
             }
         });
     }
