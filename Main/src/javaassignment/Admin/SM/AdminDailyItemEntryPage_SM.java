@@ -35,7 +35,7 @@ public class AdminDailyItemEntryPage_SM extends javax.swing.JFrame {
     public String loggedInUser;
     
 
-    /**
+    /**is SM i logged in as sales managher
      * Creates new form DailyItemEntryPage
      * @param loggedInUser
      * @param inventoryController
@@ -57,6 +57,8 @@ public class AdminDailyItemEntryPage_SM extends javax.swing.JFrame {
         initialQuantity.setEnabled(false);
         grossProfit.setEnabled(false);
         price.setEnabled(false);
+        
+        setupTableSelectionListener();
 
         // Add listeners to calculate grossProfit
         setupListeners();
