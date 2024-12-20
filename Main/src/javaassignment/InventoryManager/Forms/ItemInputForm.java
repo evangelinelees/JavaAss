@@ -132,35 +132,35 @@ public final class ItemInputForm extends JPanel {
 
         // Validate item ID
         if (!inputValidator.validateItemId(itemId)) {
-            JOptionPane.showMessageDialog(this, "Item ID must be valid", "Input Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Item ID must be valid.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         // Validate and convert quantity
-        int quantity = 0;  // Default value
+        int quantity;
         if (!inputValidator.validateQuantity(quantityText)) {
             JOptionPane.showMessageDialog(this, "Please enter a valid non-negative integer for quantity.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         } else {
-            quantity = Integer.parseInt(quantityText);  // Convert string to int
+            quantity = Integer.parseInt(quantityText);
         }
 
         // Validate and convert price
-        double price = 0.0;  // Default value
+        double price;
         if (!inputValidator.validatePrice(priceText)) {
             JOptionPane.showMessageDialog(this, "Please enter a valid non-negative number for price.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         } else {
-            price = Double.parseDouble(priceText);  // Convert string to double
+            price = Double.parseDouble(priceText);
         }
-           
-        
-        // Call the controller to update the item
-       
-        // Reload the items and refresh the UI
-        loadItems();
-        clearFields();
-        refreshItemTable();
+
+        // Update the item via the controller or service
+        inventoryController.updateItem(itemId, itemName, description, quantity, price, supplierName);
+
+
+            loadItems();
+            clearFields();
+            refreshItemTable();
     }
     
     private void deleteItem() {

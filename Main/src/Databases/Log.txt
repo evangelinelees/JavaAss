@@ -2,30 +2,46 @@
 2 | admin | User updated | SUCCESS
 3 | admin | User updated | SUCCESS
 4 | admin | User deleted | SUCCESS
-5 | admin | Requisition created | SUCCESS
-6 | admin | Requisition created | SUCCESS
-7 | admin | Submitted daily report | SUCCESS
-8 | admin | PO generated | SUCCESS
-9 | admin | PO generated | SUCCESS
-10 | admin | PO generated | SUCCESS
-11 | admin | PO Rejected | SUCCESS
-12 | admin | PO Approved | SUCCESS
-13 | admin | PO Paid | SUCCESS
-14 | admin | PO Paid | SUCCESS
-15 | admin | PO Paid | SUCCESS
-16 | admin | PO Paid | SUCCESS
-17 | admin | PO Approved | SUCCESS
-18 | admin | PO Paid | SUCCESS
-19 | admin | New user created | SUCCESS
-20 | admin | User updated | SUCCESS
-21 | admin | User deleted | SUCCESS
-22 | admin | Item created | SUCCESS
-23 | admin | Item updated | SUCCESS
-24 | admin | Item deleted | SUCCESS
-25 | admin | New user created | SUCCESS
-26 | admin | User updated | SUCCESS
-27 | admin | User deleted | SUCCESS
-28 | SM2663 | Requisition created | SUCCESS
-29 | SM2663 | Sales entry deleted | SUCCESS
-30 | SM2663 | Submitted daily report | SUCCESS
-31 | admin | PO Paid | SUCCESS
+5 | IM1234 | Item deleted | SUCCESS
+6 | IM1234 | Item deleted | SUCCESS
+7 | IM1234 | Item deleted | SUCCESS
+8 | IM1234 | Item deleted | SUCCESS
+9 | IM1234 | Item deleted | SUCCESS
+10 | IM1234 | Item deleted | SUCCESS
+11 | IM1234 | Item deleted | SUCCESS
+12 | IM1234 | Item deleted | SUCCESS
+13 | IM1234 | Item deleted | SUCCESS
+14 | IM1234 | Item deleted | SUCCESS
+15 | IM1234 | Item deleted | SUCCESS
+16 | IM1234 | Item deleted | SUCCESS
+17 | IM1234 | Item deleted | SUCCESS
+18 | IM1234 | Item deleted | SUCCESS
+19 | IM1234 | Item deleted | SUCCESS
+20 | IM1234 | Item deleted | SUCCESS
+21 | IM1234 | Item deleted | SUCCESS
+22 | IM1234 | Item deleted | SUCCESS
+23 | IM1234 | Item deleted | SUCCESS
+24 | IM1234 | Item deleted | SUCCESS
+25 | IM1234 | Supplier deleted | SUCCESS
+26 | IM1234 | Supplier updated | SUCCESS
+27 | IM1234 | Supplier created | SUCCESS
+28 | IM1234 | Supplier deleted | SUCCESS
+29 | IM1234 | Supplier created | SUCCESS
+30 | IM1234 | Supplier created | SUCCESS
+31 | IM1234 | Supplier created | SUCCESS
+32 | IM1234 | Supplier deleted | SUCCESS
+33 | IM1234 | Supplier deleted | SUCCESS
+34 | IM1234 | Supplier created | SUCCESS
+35 | IM1234 | Supplier updated | SUCCESS
+36 | IM1234 | Supplier deleted | SUCCESS
+37 | IM1234 | Supplier created | SUCCESS
+38 | IM1234 | Supplier deleted | SUCCESS
+39 | IM1234 | Supplier updated | SUCCESS
+40 | IM1234 | Supplier created | SUCCESS
+41 | IM1234 | Supplier updated | SUCCESS
+42 | IM1234 | Item created | SUCCESS
+43 | IM1234 | Item created | SUCCESS
+44 | IM1234 | Item updated | SUCCESS
+45 | IM1234 | Item updated | SUCCESS
+46 | IM1234 | Item updated | SUCCESS
+
