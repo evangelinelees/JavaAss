@@ -122,7 +122,7 @@ public final class ItemInputForm extends JPanel {
         String description = descriptionField.getText().trim();
         String quantityText = quantityField.getText().trim();
         String priceText = priceField.getText().trim();
-        String name = supplierSelection.getSelectedSupplier();
+        String supplierName = supplierSelection.getSelectedSupplier();
 
         int selectedRow = itemInputPanel1.getTable().getSelectedRow();
         if (selectedRow == -1) {
