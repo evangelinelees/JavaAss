@@ -2,3 +2,22 @@
 2 | admin | User updated | SUCCESS
 3 | admin | User updated | SUCCESS
 4 | admin | User deleted | SUCCESS
+5 | SM2663 | Requisition created | SUCCESS
+6 | SM2663 | Submitted daily report | SUCCESS
+7 | SM2663 | Requisition created | SUCCESS
+8 | SM2663 | Submitted daily report | SUCCESS
+9 | SM2663 | Requisition created | SUCCESS
+10 | SM2663 | Submitted daily report | SUCCESS
+11 | admin | New user created | SUCCESS
+12 | admin | User updated | SUCCESS
+13 | admin | User deleted | SUCCESS
+14 | admin | Item created | SUCCESS
+15 | admin | Item updated | SUCCESS
+16 | admin | Item deleted | SUCCESS
+17 | admin | Supplier updated | SUCCESS
+18 | admin | Supplier updated | SUCCESS
+19 | admin | Supplier created | SUCCESS
+20 | admin | Supplier created | SUCCESS
+21 | admin | Supplier updated | SUCCESS
+22 | admin | Supplier deleted | SUCCESS
+23 | admin | PO Approved | SUCCESS

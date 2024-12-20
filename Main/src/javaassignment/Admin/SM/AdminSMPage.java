@@ -217,8 +217,8 @@ public class AdminSMPage extends javax.swing.JFrame {
 
     private void ViewPOBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewPOBTNActionPerformed
         PurchaseOrderDao purchaseOrderDao = new PurchaseOrderDaoImpl(); 
-        ViewPO VPO = new ViewPO(loggedInUser,purchaseOrderDao);
-        VPO.setVisible(true);
+        AdminViewPO APO = new AdminViewPO(loggedInUser,purchaseOrderDao);
+        APO.setVisible(true);
         this.dispose(); 
     }//GEN-LAST:event_ViewPOBTNActionPerformed
 

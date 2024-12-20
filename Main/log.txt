@@ -1,0 +1,10 @@
+1 | null | Deducted quantity for item ID: I0017 | SUCCESS
+2 | null | Deducted quantity for item ID: I0012 | SUCCESS
+3 | null | Deducted quantity for item ID: I0005 | SUCCESS
+4 | null | Item added | SUCCESS
+5 | null | Item deleted | SUCCESS
+6 | null | Supplier updated | SUCCESS
+7 | null | Supplier created | SUCCESS
+8 | null | Supplier created | SUCCESS
+9 | null | Supplier updated | SUCCESS
+10 | null | Supplier deleted | SUCCESS
