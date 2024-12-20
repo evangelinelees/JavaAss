@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 
 
 public class AdminRegistrationPage extends javax.swing.JFrame {
-    private String loggedInUser;
+    public String loggedInUser;
    
     public AdminRegistrationPage(String loggedInUser) {
         initComponents();

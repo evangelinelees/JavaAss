@@ -12,7 +12,7 @@ import javaassignment.Admin.AdminDAO;
  * @author jchok
  */
 public class UsersList extends javax.swing.JFrame {
-    private String loggedInUser;
+    public String loggedInUser;
 
     /**
      * Creates new form UsersList
@@ -21,7 +21,8 @@ public class UsersList extends javax.swing.JFrame {
         initComponents();
         loadUsers();
         this.loggedInUser = loggedInUser;
-        //sessionUser.setText(loggedInUser);
+
+       
     }
     public UsersList() {
         
@@ -158,8 +159,8 @@ public class UsersList extends javax.swing.JFrame {
                                            
     private void Back_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_BTNActionPerformed
         AdminMainPage adminmain = new AdminMainPage(loggedInUser);
-        adminmain.setVisible(true); // Show the edit user page
-        this.dispose(); // Close the current page if required
+        adminmain.setVisible(true); 
+        this.dispose(); 
 
     }//GEN-LAST:event_Back_BTNActionPerformed
 
@@ -171,11 +172,12 @@ public class UsersList extends javax.swing.JFrame {
         
         // Fetch the user from the database using the UserDAO
         AdminDAO userDAO = new AdminDAOImpl();
-        User user = userDAO.getUserById(userId);  // Use userId instead of id
+        User user = userDAO.getUserById(userId); // the specific details of file manipulation are abstracted away and exposed as method in this line  
 
         if (user != null) {
             // Open the Update User form and pass the User object
-            EditUser EditUser = new EditUser(user);  // UpdateUser should have a constructor accepting a User object
+            EditUser EditUser = new EditUser(user, loggedInUser);
+    
             EditUser.setVisible(true);
         } else {
             // Handle case where user was not found
@@ -203,11 +205,11 @@ public class UsersList extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Please select a user to delete.");
     }
 
+
                
     }//GEN-LAST:event_Delete_BTNActionPerformed
 
     private void AddUser_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddUser_BTNActionPerformed
-        
        AdminRegistrationPage AMP = new AdminRegistrationPage(loggedInUser);
        AMP.setVisible(true);
        this.dispose();

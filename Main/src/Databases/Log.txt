@@ -1,3 +1,4 @@
-1 | SM4638 | Requisition created | SUCCESS
-2 | SM4638 | Sales entry deleted | SUCCESS
-3 | SM4638 | Requisition created | SUCCESS
+1 | admin | New user created | SUCCESS
+2 | admin | User updated | SUCCESS
+3 | admin | User updated | SUCCESS
+4 | admin | User deleted | SUCCESS
