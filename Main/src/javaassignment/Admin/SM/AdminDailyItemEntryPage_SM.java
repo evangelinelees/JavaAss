@@ -35,7 +35,7 @@ public class AdminDailyItemEntryPage_SM extends javax.swing.JFrame {
     public String loggedInUser;
     
 
-    /**is SM i logged in as sales managher
+    /**is 
      * Creates new form DailyItemEntryPage
      * @param loggedInUser
      * @param inventoryController
