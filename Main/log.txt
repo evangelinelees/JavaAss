@@ -36,3 +36,6 @@
 36 | null | Supplier updated | SUCCESS
 37 | null | Item added | SUCCESS
 38 | null | Item added | SUCCESS
+39 | null | Item updated | SUCCESS
+40 | null | Item updated | SUCCESS
+41 | null | Item updated | SUCCESS

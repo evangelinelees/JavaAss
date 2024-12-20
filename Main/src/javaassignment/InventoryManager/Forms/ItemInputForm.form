@@ -201,6 +201,9 @@
     <Component class="javaassignment.InventoryManager.Components.UniversalButton" name="universalButton3">
     </Component>
     <Component class="javaassignment.InventoryManager.Components.UniversalButton" name="universalButton1">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="universalButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javaassignment.InventoryManager.Components.SupplierSelection" name="supplierSelection">
     </Component>

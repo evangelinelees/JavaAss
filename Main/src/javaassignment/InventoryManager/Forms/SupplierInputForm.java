@@ -265,6 +265,12 @@ public class SupplierInputForm extends javax.swing.JPanel {
             }
         });
 
+        universalButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                universalButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -351,6 +357,10 @@ public class SupplierInputForm extends javax.swing.JPanel {
     private void universalButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_universalButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_universalButton2ActionPerformed
+
+    private void universalButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_universalButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_universalButton1ActionPerformed
     
     private void customizeSaveButton(String text) {
         universalButton1.setText(text);

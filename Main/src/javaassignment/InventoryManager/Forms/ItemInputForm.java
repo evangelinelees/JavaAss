@@ -44,7 +44,7 @@ public final class ItemInputForm extends JPanel {
     }
 
     public ItemInputForm(InventoryController inventoryController, SupplierSelection supplierSelection, ItemInputPanel itemInputPanel1,
-            ItemDao itemDao, SupplierController supplierController,String loggedInUser ) {
+        ItemDao itemDao, SupplierController supplierController,String loggedInUser ) {
         this.loggedInUser = loggedInUser;
         this.supplierController = supplierController;
         this.inventoryController = inventoryController;
@@ -300,6 +300,12 @@ public final class ItemInputForm extends JPanel {
             }
         });
 
+        universalButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                universalButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -396,6 +402,10 @@ public final class ItemInputForm extends JPanel {
     private void universalButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_universalButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_universalButton2ActionPerformed
+
+    private void universalButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_universalButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_universalButton1ActionPerformed
    
     private void customizeSaveButton(String text) {
         universalButton1.setText(text);

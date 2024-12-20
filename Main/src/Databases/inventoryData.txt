@@ -1,6 +1,6 @@
-I0001|Laptop|High-performance laptop with 16GB RAM and 512GB SSD|10|1200.00|TechWorld Supplies
+I0001|Laptop|High-performance laptop with 16GB RAM and 512GB SSD|50|1200.00|Select a Supplier
 I0002|Phone|Latest smartphone with 128GB storage and 5G connectivity|30|800.00|Mobile Hub
-I0003|Refrigerator|Double-door refrigerator with 300L capacity|5|600.00|CoolTech Appliances
+I0003|Refrigerator|Double Fridge|470|600.00|Select a Supplier
 I0004|Laptop|Gaming laptop with RTX 3060 and 1TB SSD|8|1500.00|GameTech Solutions
 I0005|Phone|Mid-range smartphone with 64GB storage and dual cameras|20|400.00|PhoneZone
 I0006|Refrigerator|Energy-efficient single-door refrigerator with 200L capacity|10|500.00|FrostKing Supplies
@@ -12,4 +12,4 @@ I0011|Phone|Budget smartphone with 32GB storage and HD screen|25|200.00|ValueMob
 I0012|Refrigerator|Compact mini refrigerator with 100L capacity|20|300.00|MiniChill Co.
 I0013|Laptop|Convertible laptop with touchscreen and 360° hinge|9|1100.00|FlexTech
 I0014|Phone|Rugged smartphone with waterproof and shockproof design|10|600.00|ToughPhones
-I0015|Refrigerator|Smart refrigerator with Wi-Fi and touch display|2|2000.00|FutureCool
+I0015|Phone|Rugged smartphone with waterproof and shockproof design|10|600.00|Select a Supplier

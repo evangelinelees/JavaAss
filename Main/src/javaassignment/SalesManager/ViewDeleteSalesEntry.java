@@ -452,7 +452,7 @@ public class ViewDeleteSalesEntry extends javax.swing.JFrame {
     
     public void writeToLog(String uniqueId, String description, String status) {
         try {
-                File logFilePath = new File("src/Databases/log.txt");
+                File logFilePath = new File("src/Databases/Log.txt");
                 int counter = 1;
 
                 // Create log.txt if it doesn't exist

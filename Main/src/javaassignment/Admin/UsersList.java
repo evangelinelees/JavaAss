@@ -177,8 +177,8 @@ public class UsersList extends javax.swing.JFrame {
         if (user != null) {
             // Open the Update User form and pass the User object
             EditUser EditUser = new EditUser(user, loggedInUser);
-    
             EditUser.setVisible(true);
+            this.dispose();
         } else {
             // Handle case where user was not found
             JOptionPane.showMessageDialog(this, "User not found.");

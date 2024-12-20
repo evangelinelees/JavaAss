@@ -42,6 +42,7 @@ public class AdminMainPage extends javax.swing.JFrame {
     public AdminMainPage(String loggedInUser) {
         initComponents();
         this.loggedInUser = loggedInUser;
+        loadLogFile();
         
     }
     

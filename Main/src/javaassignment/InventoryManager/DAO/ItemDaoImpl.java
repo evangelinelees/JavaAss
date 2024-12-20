@@ -23,7 +23,7 @@ public class ItemDaoImpl implements ItemDao {
     public void addItem(Item item) {
         // Add item to the list
         itemList.add(item);
-        writeToLog(loggedInUser," | Item added | ","SUCCESS");
+//        writeToLog(loggedInUser," | Item added | ","SUCCESS");
         
         // Write item to the file
         writeToFile(item);
@@ -67,7 +67,7 @@ public class ItemDaoImpl implements ItemDao {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
             writer.write(itemToString(item));
             writer.newLine();
-            writeToLog(loggedInUser," | Item saved | ","SUCCESS");
+            //writeToLog(loggedInUser," | Item saved | ","SUCCESS");
         } catch (IOException e) {
             e.printStackTrace(); // Handle file writing exceptions
         }
@@ -89,7 +89,6 @@ public class ItemDaoImpl implements ItemDao {
 
         if (updated) {
             saveAll(items); // Save only if an item was updated
-            writeToLog(loggedInUser," | Item updated | ","SUCCESS");
             
         } else {
             System.out.println("Item with ID " + item.getItemId() + " not found for update.");
@@ -190,7 +189,6 @@ public class ItemDaoImpl implements ItemDao {
 
             if (itemRemoved) {
                 saveAll(items);
-                writeToLog(loggedInUser," | Item deleted | ","SUCCESS");
             } 
                 else {
                 System.out.println("Item with ID " + itemId + " not found.");
@@ -216,7 +214,7 @@ public class ItemDaoImpl implements ItemDao {
 
         if (updated) {
             saveAll(items); // Save changes to file
-            writeToLog(loggedInUser, " | Deducted quantity for item ID: " + itemId + " | ", "SUCCESS");
+            
         } else {
             throw new IllegalArgumentException("Item with ID " + itemId + " not found.");
         }
@@ -239,7 +237,7 @@ public class ItemDaoImpl implements ItemDao {
     @Override
     public void writeToLog(String uniqueId, String description, String status) {
         try {
-                File logFilePath = new File("log.txt");
+                File logFilePath = new File("src/Databases/Log.txt");
                 int counter = 1;
 
                 // Create log.txt if it doesn't exist

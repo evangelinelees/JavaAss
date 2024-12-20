@@ -23,7 +23,7 @@ import javaassignment.InventoryManager.Models.Supplier;
 public class SupplierDaoImpl implements SupplierDao{
    private final List<Supplier> supplierList = new ArrayList<>();
    private final String FILE_PATH = "src/Databases/supplierData.txt";
-   private final String logFilePath = "log.txt";
+   private final String logFilePath = "src/Databases/Log.txt";
    private String loggedInUser;
 
    
@@ -74,7 +74,6 @@ public class SupplierDaoImpl implements SupplierDao{
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
             writer.write(supplierToString(supplier));
             writer.newLine();
-            writeToLog(loggedInUser," | Supplier created | ","SUCCESS");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -95,7 +94,6 @@ public class SupplierDaoImpl implements SupplierDao{
 
         if (updated) {
             saveAll(suppliers); // Save updated list
-            writeToLog(loggedInUser," | Supplier updated | ","SUCCESS");
         } else {
             System.out.println("Supplier with ID " + supplier.getSupplierId() + " not found for update.");
         }
@@ -107,7 +105,6 @@ public class SupplierDaoImpl implements SupplierDao{
 
         if (removed) {
             saveAll(suppliers);
-            writeToLog(loggedInUser," | Supplier deleted | ","SUCCESS");
         } else {
             System.out.println("Supplier with ID " + supplierId + " not found.");
         }
@@ -201,7 +198,7 @@ public class SupplierDaoImpl implements SupplierDao{
    @Override
     public void writeToLog(String uniqueId, String description, String status) {
         try {
-                File logFilePath = new File("log.txt");
+                File logFilePath = new File("src/Databases/Log.txt");
                 int counter = 1;
 
                 // Create log.txt if it doesn't exist

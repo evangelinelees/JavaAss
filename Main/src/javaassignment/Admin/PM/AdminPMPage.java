@@ -524,12 +524,21 @@ public class AdminPMPage extends javax.swing.JFrame {
         }
 
         try {
-            AdminDAO adminDAO = new AdminDAOImpl();
+        AdminDAO adminDAO = new AdminDAOImpl();
+        
+        if ("admin".equalsIgnoreCase(userId)) {
+            // You can create a default "admin" user object if needed
+            User user = new User(); // Assuming a User constructor exists
+            user.setUserId("admin");
+        } else {
+            // Validate user ID using the database
             User user = adminDAO.getUserById(userId);
+
             if (user == null) {
                 JOptionPane.showMessageDialog(this, "Invalid UserID. Please enter a valid UserID.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+        }
 
             // Create a Requisition object
             Requisition requisition = new Requisition(itemCode, itemName, currentQuantity, proposedQuantity, userId, loggedInUser);

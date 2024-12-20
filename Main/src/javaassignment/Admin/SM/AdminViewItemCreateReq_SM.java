@@ -407,7 +407,7 @@ public class AdminViewItemCreateReq_SM extends javax.swing.JFrame {
     }//GEN-LAST:event_UserIDFieldActionPerformed
 
     private void showReorderBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showReorderBtn1ActionPerformed
-        itemReorderLevel1.showReorderItems(3);
+        itemReorderLevel1.showReorderItems(10);
     }//GEN-LAST:event_showReorderBtn1ActionPerformed
 
     
