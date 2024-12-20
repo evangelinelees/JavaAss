@@ -47,9 +47,22 @@ public class AdminViewItemCreateReq_SM extends javax.swing.JFrame {
         ItemNameField.setEnabled(false);
         CurrentQuantityField.setEnabled(false);
         
-        clearFields();
+        
         loadItems();
+        setupTableSelectionListener();
        
+    }
+    
+     public AdminViewItemCreateReq_SM(InventoryController inventoryController){
+        if (inventoryController == null) {
+        System.out.println("InventoryController is NULL in constructor!");
+    } else {
+        System.out.println("InventoryController is initialized");
+    }
+        this.inventoryController = inventoryController;
+        initComponents();
+        loadItems();
+        
     }
     
     
@@ -73,21 +86,8 @@ public class AdminViewItemCreateReq_SM extends javax.swing.JFrame {
         }
     }
     
-    
-    
-    
-            
-    public AdminViewItemCreateReq_SM(InventoryController inventoryController){
-        if (inventoryController == null) {
-        System.out.println("InventoryController is NULL in constructor!");
-    } else {
-        System.out.println("InventoryController is initialized");
-    }
-        this.inventoryController = inventoryController;
-        initComponents();
-        loadItems();
-        
-    }
+     
+   
     
     private void clearFields() {
         ProposedQuantityField.setText("");

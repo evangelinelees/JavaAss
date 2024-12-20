@@ -37,12 +37,27 @@ public class AdminViewDeleteSalesEntry extends javax.swing.JFrame {
 
         // Load items into the table
         loadItemsToTable();
+        
 
         
     }
+    
     public AdminViewDeleteSalesEntry(){
+        initComponents();
+        this.loggedInUser = loggedInUser;
         
+        dateField.setEnabled(false);
+        itemName.setEnabled(false);
+        itemCode.setEnabled(false);
+        grossProfit.setEnabled(false);
+        price.setEnabled(false);
+        quantitySold.setEnabled(false);
+        lossesField.setEnabled(false);
+
+        // Load items into the table
+        loadItemsToTable();
     }
+   
             
     
     private void loadItemsToTable() {

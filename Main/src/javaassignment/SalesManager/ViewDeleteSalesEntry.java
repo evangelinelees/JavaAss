@@ -433,8 +433,9 @@ public class ViewDeleteSalesEntry extends javax.swing.JFrame {
                     tableModel.getValueAt(i, 6)
                 );
                 writer.newLine();
-                writeToLog(loggedInUser," | Sales entry deleted | ","SUCCESS");
+                
             }
+            writeToLog(loggedInUser," | Sales entry deleted | ","SUCCESS");
         } catch (Exception e) {
             e.printStackTrace();
             javax.swing.JOptionPane.showMessageDialog(this, "Error updating file.");

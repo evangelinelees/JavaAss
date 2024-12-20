@@ -1,7 +1,8 @@
 
-package javaassignment.FinanceManager;
+package javaassignment.Admin.FM;
 
 
+import javaassignment.FinanceManager.*;
 import javaassignment.PurchaseManager.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +19,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import javaassignment.Admin.AdminDAO;
 import javaassignment.Admin.AdminDAOImpl;
+import javaassignment.Admin.AdminMainPage;
 import javaassignment.Admin.User;
 import javaassignment.InventoryManager.Components.ItemInputPanel;
 import javaassignment.InventoryManager.Components.SupplierInputPanel;
@@ -36,7 +38,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 
-public class FM_Dashboard extends javax.swing.JFrame {
+public class AdminFMPage extends javax.swing.JFrame {
     private final SupplierController supplierController;
     private final InventoryController inventoryController;
     private final RequisitionDAO requisitionDAO;
@@ -44,7 +46,7 @@ public class FM_Dashboard extends javax.swing.JFrame {
     private String loggedInUser;
     
     
-    public FM_Dashboard(String loggedInUser,InventoryController inventoryController, ItemInputPanel itemInputPanel,SupplierInputPanel supplierInputPanel, 
+    public AdminFMPage(String loggedInUser,InventoryController inventoryController, ItemInputPanel itemInputPanel,SupplierInputPanel supplierInputPanel, 
             SupplierController supplierController, RequisitionDAO requisitionDAO, PurchaseOrderDao purchaseOrderDao) {
         this.loggedInUser = loggedInUser;
         this.requisitionDAO = requisitionDAO;
@@ -64,7 +66,7 @@ public class FM_Dashboard extends javax.swing.JFrame {
     }
     
     
-    public FM_Dashboard(InventoryController inventoryController, ItemInputPanel itemInputPanel,SupplierInputPanel supplierInputPanel, 
+    public AdminFMPage(InventoryController inventoryController, ItemInputPanel itemInputPanel,SupplierInputPanel supplierInputPanel, 
             SupplierController supplierController, RequisitionDAO requisitionDAO, PurchaseOrderDao purchaseOrderDao) {
         this.requisitionDAO = requisitionDAO;
         this.purchaseOrderDao = purchaseOrderDao;
@@ -148,6 +150,7 @@ public class FM_Dashboard extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         paid = new javax.swing.JButton();
         purchaseOrderTablePanel2 = new javaassignment.PurchaseManager.PurchaseOrderTablePanel();
+        Back_BTN = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Save = new javax.swing.JMenuItem();
@@ -385,6 +388,13 @@ public class FM_Dashboard extends javax.swing.JFrame {
 
         MainTAB.addTab("Payment", jTabbedPane1);
 
+        Back_BTN.setText("Back");
+        Back_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back_BTNActionPerformed(evt);
+            }
+        });
+
         jMenu1.setText("File");
 
         Save.setText("Save Changes");
@@ -402,7 +412,9 @@ public class FM_Dashboard extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(232, 232, 232)
+                .addGap(14, 14, 14)
+                .addComponent(Back_BTN)
+                .addGap(143, 143, 143)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(MainTAB, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -411,7 +423,9 @@ public class FM_Dashboard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(Back_BTN))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MainTAB)
                 .addGap(47, 47, 47))
@@ -422,11 +436,13 @@ public class FM_Dashboard extends javax.swing.JFrame {
 
     private void ApproveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ApproveActionPerformed
         approvePurchaseOrder();
+        writeToLog(loggedInUser," | PO Approved | ","SUCCESS");
         loadPO();
     }//GEN-LAST:event_ApproveActionPerformed
 
     private void RejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RejectActionPerformed
         rejectPurchaseOrder();
+        writeToLog(loggedInUser," | PO Rejected | ","SUCCESS");
         loadPO();
     }//GEN-LAST:event_RejectActionPerformed
 
@@ -436,8 +452,15 @@ public class FM_Dashboard extends javax.swing.JFrame {
 
     private void paidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paidActionPerformed
         payPurchaseOrder();
+        writeToLog(loggedInUser," | PO Paid | ","SUCCESS");
         loadApprovedPO();
     }//GEN-LAST:event_paidActionPerformed
+
+    private void Back_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_BTNActionPerformed
+        AdminMainPage AMP = new AdminMainPage(loggedInUser);
+        AMP.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Back_BTNActionPerformed
      
     private void approvePurchaseOrder() {
         int selectedRow = purchaseOrderTablePanel1.getTable().getSelectedRow();
@@ -529,7 +552,7 @@ public class FM_Dashboard extends javax.swing.JFrame {
     
     public void writeToLog(String uniqueId, String description, String status) {
         try {
-                File logFilePath = new File("src/Databases/log.txt");
+                File logFilePath = new File("src/Databases/Log.txt");
                 int counter = 1;
 
                 // Create log.txt if it doesn't exist
@@ -583,7 +606,7 @@ public class FM_Dashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FM_Dashboard( inventoryController , itemInputPanel ,supplierInputPanel, 
+                new AdminFMPage( inventoryController , itemInputPanel ,supplierInputPanel, 
                         supplierController, requisitionDAO, purchaseOrderDao ).setVisible(true);
             }
         });
@@ -591,6 +614,7 @@ public class FM_Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Approve;
+    private javax.swing.JButton Back_BTN;
     private javax.swing.JTabbedPane ItemSupplierTAB;
     private javax.swing.JMenuItem LogOut;
     private javax.swing.JTabbedPane MainTAB;
