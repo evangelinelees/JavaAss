@@ -35,6 +35,9 @@ public class DailyItemEntryPage_SM extends javax.swing.JFrame {
     private double selectedItemPrice;
     private String loggedInUser;
     
+    public String getLoggedInUser() {
+        return loggedInUser;
+    }
 
     /**
      * Creates new form DailyItemEntryPage
@@ -43,8 +46,16 @@ public class DailyItemEntryPage_SM extends javax.swing.JFrame {
      */
     public DailyItemEntryPage_SM(String loggedInUser, InventoryController inventoryController) {
         initComponents();
-        this.inventoryController = inventoryController;
         this.loggedInUser = loggedInUser;
+        this.inventoryController = inventoryController;
+        
+        if (inventoryController == null) {
+            System.out.println("InventoryController is NULL in constructor!");
+        } else {
+            System.out.println("InventoryController is initialized");
+        }
+        this.inventoryController = inventoryController;
+        
 
         // Set the current date in the dateField
         LocalDate today = LocalDate.now();
@@ -616,6 +627,9 @@ public class DailyItemEntryPage_SM extends javax.swing.JFrame {
                         String description = itemInputPanel1.getTable().getValueAt(selectedRow, 2).toString();
                         String quantity = itemInputPanel1.getTable().getValueAt(selectedRow, 3).toString();
                         String price1 = itemInputPanel1.getTable().getValueAt(selectedRow, 4).toString();
+                        System.out.println("Selected Row: " + selectedRow);
+                        System.out.println("Item ID: " + itemId);
+                        System.out.println("Item Name: " + name);
 
                         // Populate the fields for editing
                         itemCode.setText(itemId);
@@ -623,6 +637,8 @@ public class DailyItemEntryPage_SM extends javax.swing.JFrame {
                         //descriptionField.setText(description);
                         initialQuantity.setText(quantity);
                         price.setText(price1);
+                        
+
                     }
                 }
             }

@@ -19,11 +19,15 @@ import javax.swing.table.DefaultTableModel;
  * @author vroom
  */
 public class SalesReportPage_SM extends javax.swing.JFrame {
-
+    public String loggedInUser;
     /**
      * Creates new form SalesReportPage_SM
      */
     public SalesReportPage_SM() {
+        initComponents();
+        loadItemsToTable();
+    }
+     public SalesReportPage_SM(String loggedInUser) {
         initComponents();
         loadItemsToTable();
     }
@@ -351,7 +355,7 @@ private String getMonthName(int monthNumber) {
     }//GEN-LAST:event_barGraphActionPerformed
 
     private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-    SalesManagerMainPage SMM = new SalesManagerMainPage();
+    SalesManagerMainPage SMM = new SalesManagerMainPage(loggedInUser);
     SMM.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_backBtnActionPerformed

@@ -1,0 +1,8 @@
+1 | null | Item added | SUCCESS
+2 | null | Item deleted | SUCCESS
+3 | null | Item added | SUCCESS
+4 | null | Supplier created | SUCCESS
+5 | null | Supplier updated | SUCCESS
+6 | null | Supplier deleted | SUCCESS
+7 | admin | Requisition created | SUCCESS
+8 | admin | Requisition created | SUCCESS

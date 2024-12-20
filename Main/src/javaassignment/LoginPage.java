@@ -7,6 +7,9 @@ import javaassignment.Admin.Admin;
 import javaassignment.Admin.AdminDAO;
 import javaassignment.Admin.AdminDAOImpl;
 import javaassignment.InventoryManager.Main;
+import javaassignment.PurchaseManager.RequisitionDAO;
+import javaassignment.PurchaseManager.RequisitionDAOImpl;
+
 import javaassignment.SalesManager.SalesManagerMainPage;
 import javax.swing.JOptionPane;
 
@@ -14,18 +17,16 @@ public class LoginPage extends javax.swing.JFrame {
     private AdminDAO userDAO;
     private String loggedInUser = null;
     
+    
     public LoginPage() {
         initComponents();
         userDAO = new AdminDAOImpl(); // Initialize the DAO
-        
-
+       
     }
 
-
     
-   
 
-    
+    //fag code
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

@@ -8,6 +8,7 @@ import javaassignment.LoginPage;
 import javaassignment.PurchaseManager.PM_Dashboard;
 import javaassignment.PurchaseManager.PurchaseOrder;
 import javaassignment.PurchaseManager.PurchaseOrderDao;
+import javaassignment.PurchaseManager.PurchaseOrderDaoImpl;
 import javaassignment.PurchaseManager.RequisitionDAO;
 
 /**
@@ -25,7 +26,8 @@ public class SalesManagerMainPage extends javax.swing.JFrame {
      */
     public SalesManagerMainPage(String loggedInUser) {
         initComponents();   
-        this.loggedInUser = loggedInUser;   
+        this.loggedInUser = loggedInUser;  
+        this.inventoryController = inventoryController;
         sessionUser.setText(loggedInUser);
 
     
@@ -228,9 +230,10 @@ public class SalesManagerMainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_DailyItemSalesEntryBTNActionPerformed
 
     private void SalesReportBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalesReportBTNActionPerformed
-       SalesReportPage_SM SR = new SalesReportPage_SM();
-       SR.setVisible(true);
-       this.dispose();
+       
+        SalesReportPage_SM SR = new SalesReportPage_SM(loggedInUser);
+        SR.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_SalesReportBTNActionPerformed
 
     private void editDailyItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editDailyItemsActionPerformed
@@ -240,9 +243,10 @@ public class SalesManagerMainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_editDailyItemsActionPerformed
 
     private void ViewPOBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewPOBTNActionPerformed
-        List<PurchaseOrder> purchaseOrder = purchaseOrderDao.getAllPurchaseOrders();
-        
-        
+        PurchaseOrderDao purchaseOrderDao = new PurchaseOrderDaoImpl(); 
+        ViewPO VPO = new ViewPO(loggedInUser,purchaseOrderDao);
+        VPO.setVisible(true);
+        this.dispose();        
     }//GEN-LAST:event_ViewPOBTNActionPerformed
 
     /**

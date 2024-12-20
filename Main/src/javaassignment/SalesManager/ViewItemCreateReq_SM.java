@@ -48,8 +48,9 @@ public class ViewItemCreateReq_SM extends javax.swing.JFrame {
         ItemNameField.setEnabled(false);
         CurrentQuantityField.setEnabled(false);
         
-        clearFields();
+        
         loadItems();
+        setupTableSelectionListener();
        
     }
     

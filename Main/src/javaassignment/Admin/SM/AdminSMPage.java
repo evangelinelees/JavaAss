@@ -7,6 +7,9 @@ package javaassignment.Admin.SM;
 import javaassignment.Admin.AdminMainPage;
 import javaassignment.InventoryManager.Controller.InventoryController;
 import javaassignment.LoginPage;
+import javaassignment.PurchaseManager.PurchaseOrderDao;
+import javaassignment.PurchaseManager.PurchaseOrderDaoImpl;
+import javaassignment.SalesManager.ViewPO;
 
 /**
  *
@@ -125,6 +128,11 @@ public class AdminSMPage extends javax.swing.JFrame {
 
         ViewPOBTN.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ViewPOBTN.setText("View Purchaser Orders");
+        ViewPOBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewPOBTNActionPerformed(evt);
+            }
+        });
 
         editDailyItems.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         editDailyItems.setText("Delete Daily Sales Entry");
@@ -206,6 +214,13 @@ public class AdminSMPage extends javax.swing.JFrame {
         EDSE.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_editDailyItemsActionPerformed
+
+    private void ViewPOBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewPOBTNActionPerformed
+        PurchaseOrderDao purchaseOrderDao = new PurchaseOrderDaoImpl(); 
+        ViewPO VPO = new ViewPO(loggedInUser,purchaseOrderDao);
+        VPO.setVisible(true);
+        this.dispose(); 
+    }//GEN-LAST:event_ViewPOBTNActionPerformed
 
     /**
      * @param args the command line arguments

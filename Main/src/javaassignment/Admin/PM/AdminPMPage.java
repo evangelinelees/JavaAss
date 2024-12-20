@@ -1,10 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-package javaassignment.PurchaseManager;
+
+package javaassignment.Admin.PM;
 
 
+import javaassignment.PurchaseManager.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -17,6 +15,7 @@ import java.time.LocalDate;
 import java.util.List;
 import javaassignment.Admin.AdminDAO;
 import javaassignment.Admin.AdminDAOImpl;
+import javaassignment.Admin.AdminMainPage;
 import javaassignment.Admin.User;
 import javaassignment.InventoryManager.Components.ItemInputPanel;
 import javaassignment.InventoryManager.Components.SupplierInputPanel;
@@ -32,14 +31,15 @@ import javax.swing.event.ListSelectionListener;
 
 
 
-public class PM_Dashboard extends javax.swing.JFrame {
+public class AdminPMPage extends javax.swing.JFrame {
     private final SupplierController supplierController;
     private final InventoryController inventoryController;
     private final RequisitionDAO requisitionDAO;
     private final PurchaseOrderDao purchaseOrderDao;
     private String loggedInUser;    
     
-    public PM_Dashboard(InventoryController inventoryController, ItemInputPanel itemInputPanel, SupplierInputPanel supplierInputPanel, SupplierController supplierController, RequisitionDAO requisitionDAO, PurchaseOrderDao purchaseOrderDao) {
+    public AdminPMPage(String loggedInUser, InventoryController inventoryController, ItemInputPanel itemInputPanel, SupplierInputPanel supplierInputPanel,
+            SupplierController supplierController, RequisitionDAO requisitionDAO, PurchaseOrderDao purchaseOrderDao) {
         this.loggedInUser = loggedInUser;
         this.requisitionDAO = requisitionDAO;
         this.purchaseOrderDao = purchaseOrderDao;
@@ -57,6 +57,26 @@ public class PM_Dashboard extends javax.swing.JFrame {
         loadRequisition();
         loadPO();        
     }
+    public AdminPMPage(InventoryController inventoryController, ItemInputPanel itemInputPanel, SupplierInputPanel supplierInputPanel,
+            SupplierController supplierController, RequisitionDAO requisitionDAO, PurchaseOrderDao purchaseOrderDao) {        
+        this.requisitionDAO = requisitionDAO;
+        this.purchaseOrderDao = purchaseOrderDao;
+        this.supplierController = supplierController;
+        this.inventoryController = inventoryController;
+        this.itemInputPanel = itemInputPanel;
+        this.supplierInputPanel = supplierInputPanel;
+        this.loggedInUser = loggedInUser;
+        
+        
+        initComponents();
+        setupTableSelectionListener();
+        loadItemsToTable();
+        loadItems();
+        loadSupplier();
+        loadRequisition();
+        loadPO();        
+    }
+    
     private void loadItemsToTable() {
         List<Item> items = inventoryController.getAllItems();
         if (itemReorderLevel1 != null) {
@@ -142,6 +162,7 @@ public class PM_Dashboard extends javax.swing.JFrame {
         requisitionTablePanel1 = new javaassignment.PurchaseManager.RequisitionTablePanel();
         GeneratePO = new javax.swing.JButton();
         purchaseOrderTablePanel1 = new javaassignment.PurchaseManager.PurchaseOrderTablePanel();
+        Back_BTN = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Save = new javax.swing.JMenuItem();
@@ -322,44 +343,45 @@ public class PM_Dashboard extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(ItemCodeField))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(ItemNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(169, 169, 169)
-                                .addComponent(SubmitRequisition))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(UserIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(315, 315, 315)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(CurrentQuantityField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(ProposedQuantityField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(8, 8, 8))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(itemReorderLevel1, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSupplierTb1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(ItemCodeField))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(ItemNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(169, 169, 169)
+                                        .addComponent(SubmitRequisition))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(UserIDField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(315, 315, 315)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(CurrentQuantityField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(ProposedQuantityField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(8, 8, 8))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(itemReorderLevel1, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblSupplierTb1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -429,6 +451,13 @@ public class PM_Dashboard extends javax.swing.JFrame {
 
         MainTAB.addTab("Purchase Orders", jTabbedPane4);
 
+        Back_BTN.setText("Back");
+        Back_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Back_BTNActionPerformed(evt);
+            }
+        });
+
         jMenu1.setText("File");
 
         Save.setText("Save Changes");
@@ -446,21 +475,28 @@ public class PM_Dashboard extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(235, 235, 235)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MainTAB)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Back_BTN)
+                        .addGap(154, 154, 154)
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(MainTAB, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Back_BTN)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MainTAB, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
+                .addComponent(MainTAB)
                 .addContainerGap())
         );
 
@@ -503,7 +539,8 @@ public class PM_Dashboard extends javax.swing.JFrame {
             boolean success = requisitionDAO.saveRequisition(itemCode, itemName, currentQuantity, proposedQuantity, userId);
             if (success) {
                 JOptionPane.showMessageDialog(this, "Requisition submitted successfully.");
-                writeToLog(loggedInUser," | Requisition created | ","SUCCESS");
+                writeToLog(loggedInUser," | PM Requisition created | ","SUCCESS");
+                
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -515,12 +552,19 @@ public class PM_Dashboard extends javax.swing.JFrame {
 
     private void GeneratePOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeneratePOActionPerformed
         setupGeneratePurchaseOrderButton();
+        writeToLog(loggedInUser," | PO generated | ","SUCCESS");
         loadRequisition();
     }//GEN-LAST:event_GeneratePOActionPerformed
+
+    private void Back_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_BTNActionPerformed
+        AdminMainPage AMP = new AdminMainPage(loggedInUser);
+        AMP.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_Back_BTNActionPerformed
     
     public void writeToLog(String uniqueId, String description, String status) {
         try {
-                File logFilePath = new File("log.txt");
+                File logFilePath = new File("src/Databases/Log.txt");
                 int counter = 1;
 
                 // Create log.txt if it doesn't exist
@@ -682,13 +726,14 @@ public class PM_Dashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PM_Dashboard( inventoryController , itemInputPanel ,supplierInputPanel, 
+                new AdminPMPage( inventoryController , itemInputPanel ,supplierInputPanel, 
                         supplierController, requisitionDAO, purchaseOrderDao ).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back_BTN;
     private javax.swing.JTextField CurrentQuantityField;
     private javax.swing.JButton GeneratePO;
     private javax.swing.JTextField ItemCodeField;

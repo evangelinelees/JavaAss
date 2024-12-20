@@ -1,17 +1,3 @@
-
-2 | admin | New user created | SUCCESS
-3 | admin | User updated | SUCCESS
-4 | admin | User deleted | SUCCESS
-5 | admin | Item created | SUCCESS
-6 | admin | Item updated | SUCCESS
-7 | admin | Item updated | SUCCESS
-8 | admin | Item created | SUCCESS
-9 | admin | Item created | SUCCESS
-10 | admin | Item deleted | SUCCESS
-11 | admin | Supplier added | SUCCESS
-12 | admin | Supplier created | SUCCESS
-13 | admin | Supplier added | SUCCESS
-14 | admin | Supplier created | SUCCESS
-15 | admin | Supplier updated | SUCCESS
-16 | admin | Supplier deleted | SUCCESS
-17 | admin | Sales entry deleted | SUCCESS
+1 | SM4638 | Requisition created | SUCCESS
+2 | SM4638 | Sales entry deleted | SUCCESS
+3 | SM4638 | Requisition created | SUCCESS

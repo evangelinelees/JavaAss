@@ -7,10 +7,25 @@ import java.io.IOException;
 import javaassignment.Admin.SM.AdminSMPage;
 import java.util.List;
 import java.util.stream.Collectors;
+import javaassignment.Admin.FM.AdminFMPage;
+
 import javaassignment.Admin.IM.AdminIMPage;
 import javaassignment.Admin.IM.IM_MainMenu;
 import javaassignment.Admin.IM.IM_MainMenu;
+import javaassignment.Admin.PM.AdminPMPage;
+import javaassignment.FinanceManager.FM_Dashboard;
+import javaassignment.InventoryManager.Components.ItemInputPanel;
+import javaassignment.InventoryManager.Components.SupplierInputPanel;
+import javaassignment.InventoryManager.Controller.InventoryController;
+import javaassignment.InventoryManager.Controller.SupplierController;
 import javaassignment.LoginPage;
+import javaassignment.PurchaseManager.PM_Dashboard;
+import javaassignment.PurchaseManager.PurchaseOrder;
+import javaassignment.PurchaseManager.PurchaseOrderDao;
+import javaassignment.PurchaseManager.PurchaseOrderDaoImpl;
+import javaassignment.PurchaseManager.Requisition;
+import javaassignment.PurchaseManager.RequisitionDAO;
+import javaassignment.PurchaseManager.RequisitionDAOImpl;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,6 +37,7 @@ public class AdminMainPage extends javax.swing.JFrame {
     
     /**
      * Creates new form AdminMainPage
+     * 
      */
     public AdminMainPage(String loggedInUser) {
         initComponents();
@@ -50,6 +66,7 @@ public class AdminMainPage extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         notificationTable = new javax.swing.JTable();
         Refresh_BTN = new javax.swing.JToggleButton();
+        PurchaseManagerBTN = new javax.swing.JButton();
         LogoutBTN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -136,26 +153,26 @@ public class AdminMainPage extends javax.swing.JFrame {
             }
         });
 
+        PurchaseManagerBTN.setText("Purchase");
+        PurchaseManagerBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PurchaseManagerBTNActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(InventoryBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(FinanceBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(SalesBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(1, 1, 1))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RegisterBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EditBTN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(50, 50, 50)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(RegisterBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InventoryBTN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(FinanceBTN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(SalesBTN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PurchaseManagerBTN, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(47, 47, 47)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 78, Short.MAX_VALUE))
@@ -171,14 +188,16 @@ public class AdminMainPage extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(RegisterBTN)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(31, 31, 31)
                         .addComponent(EditBTN)
-                        .addGap(46, 46, 46)
+                        .addGap(33, 33, 33)
                         .addComponent(InventoryBTN)
-                        .addGap(48, 48, 48)
+                        .addGap(38, 38, 38)
                         .addComponent(FinanceBTN)
-                        .addGap(43, 43, 43)
-                        .addComponent(SalesBTN))
+                        .addGap(37, 37, 37)
+                        .addComponent(SalesBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(PurchaseManagerBTN))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Refresh_BTN)
@@ -253,7 +272,17 @@ public class AdminMainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_SalesBTNActionPerformed
 
     private void FinanceBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FinanceBTNActionPerformed
-        // TODO add your handling code here:
+        InventoryController inventoryController = new  InventoryController();
+        ItemInputPanel itemInputPanel = new ItemInputPanel();
+        SupplierInputPanel supplierInputPanel = new SupplierInputPanel();
+        SupplierController supplierController = new SupplierController();
+        RequisitionDAO requisitionDAO = new RequisitionDAOImpl();
+        PurchaseOrderDao purchaseOrderDao = new PurchaseOrderDaoImpl();
+        
+        AdminFMPage FMP = new AdminFMPage(loggedInUser, inventoryController , itemInputPanel , supplierInputPanel , 
+            supplierController , requisitionDAO ,  purchaseOrderDao); 
+        FMP.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_FinanceBTNActionPerformed
 
     private void InventoryBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InventoryBTNActionPerformed
@@ -278,9 +307,23 @@ public class AdminMainPage extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_RegisterBTNActionPerformed
 
+    private void PurchaseManagerBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PurchaseManagerBTNActionPerformed
+        InventoryController inventoryController = new  InventoryController();
+        ItemInputPanel itemInputPanel = new ItemInputPanel();
+        SupplierInputPanel supplierInputPanel = new SupplierInputPanel();
+        SupplierController supplierController = new SupplierController();
+        RequisitionDAO requisitionDAO = new RequisitionDAOImpl();
+        PurchaseOrderDao purchaseOrderDao = new PurchaseOrderDaoImpl();
+        
+        AdminPMPage PMP = new AdminPMPage(loggedInUser, inventoryController,  itemInputPanel, supplierInputPanel, 
+             supplierController,  requisitionDAO,  purchaseOrderDao); 
+        PMP.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_PurchaseManagerBTNActionPerformed
+
     public void loadLogFile() {
         // Define the file path for the log file
-        File logFile = new File("src/Databases/log.txt");
+        File logFile = new File("src/Databases/Log.txt");
 
         // Create a model for the notification table
         DefaultTableModel model = (DefaultTableModel) notificationTable.getModel();
@@ -333,6 +376,7 @@ public class AdminMainPage extends javax.swing.JFrame {
     private javax.swing.JButton FinanceBTN;
     private javax.swing.JButton InventoryBTN;
     private javax.swing.JButton LogoutBTN;
+    private javax.swing.JButton PurchaseManagerBTN;
     private javax.swing.JToggleButton Refresh_BTN;
     private javax.swing.JButton RegisterBTN;
     private javax.swing.JButton SalesBTN;

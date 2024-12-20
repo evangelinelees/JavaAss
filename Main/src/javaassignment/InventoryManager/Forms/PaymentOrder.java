@@ -9,8 +9,10 @@ package javaassignment.InventoryManager.Forms;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
@@ -71,25 +73,37 @@ public final class PaymentOrder extends JPanel {
 
    
     
-    public void writeToLog(String uniqueId, String description, String status) {
+    public void writeToLog(String loggedInUser, String description, String status) {
         try {
-            File logFilePath = new File("src/Databases/Log.txt");
+                File logFilePath = new File("src/Databases/Log.txt");
+                int counter = 1;
 
-            // Create log.txt if it doesn't exist
-            if (!logFilePath.exists()) {
-                logFilePath.createNewFile();
+                // Create log.txt if it doesn't exist
+                if (!logFilePath.exists()) {
+                    logFilePath.createNewFile();
             }
+
+            // Read existing log entries and calculate the counter
+            try (BufferedReader reader = new BufferedReader(new FileReader(logFilePath))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    counter++;  // Increment the counter for each existing line
+                }
+            } catch (IOException e) {
+                System.err.println("Error reading log file: " + e.getMessage());
+            }
+
+            // Prepare the log entry with the counter
+            String logEntry = counter + " | "+ loggedInUser + description + status;
 
             // Append log entry
             try (BufferedWriter logWriter = new BufferedWriter(new FileWriter(logFilePath, true))) {
-                String logEntry = uniqueId + description  + status;
                 logWriter.write(logEntry);
                 logWriter.newLine();
             }
         } catch (IOException e) {
             System.err.println("Error writing to log file: " + e.getMessage());
         }
-        
     }
     
 
@@ -180,6 +194,7 @@ public final class PaymentOrder extends JPanel {
                         // Optionally, refresh the inventory display or give feedback
                         loadPO();  // Reload the table or display a success message
                         JOptionPane.showMessageDialog(null, "Inventory updated successfully.");
+                        writeToLog(loggedInUser," | Inventory updated | ","SUCCESS");
                     } else {
                         JOptionPane.showMessageDialog(null, "Invalid quantity. Please enter a valid number.");
                     }
@@ -221,7 +236,7 @@ public final class PaymentOrder extends JPanel {
     private void customizeAcceptButton(String text) {
         universalButton1.setText(text);
         System.out.println(loggedInUser);
-        writeToLog(loggedInUser," | Updated Stock from PO | ","SUCCESS");
+        
     }
     
     

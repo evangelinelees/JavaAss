@@ -14,7 +14,7 @@ public class Requisition {
     private String currentQuantity;
     private String proposedQuantity;
     private String userId;
-    private String loggedInUser;
+    public String loggedInUser;
     
 
     // Constructor
